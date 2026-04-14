@@ -2,9 +2,10 @@ import * as THREE from "three";
 import { RGBELoader } from "three-stdlib";
 import { gsap } from "gsap";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const setLighting = (scene: THREE.Scene) => {
   const directionalLight = new THREE.DirectionalLight(0x5eead4, 0);
-  directionalLight.intensity = 0;
   directionalLight.position.set(-0.47, -0.32, -1);
   directionalLight.castShadow = true;
   directionalLight.shadow.mapSize.width = 1024;
@@ -19,33 +20,35 @@ const setLighting = (scene: THREE.Scene) => {
   scene.add(pointLight);
 
   new RGBELoader()
-    .setPath("/models/")
-    .load("char_enviorment.hdr?v=2", function (texture) {
+    .setPath(`${baseUrl}models/`)
+    .load("char_enviorment.hdr?v=2", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
       scene.environmentIntensity = 0;
       scene.environmentRotation.set(5.76, 85.85, 1);
     });
 
-  function setPointLight(screenLight: any) {
-    if (screenLight.material.opacity > 0.9) {
-      pointLight.intensity = screenLight.material.emissiveIntensity * 20;
+  function setPointLight(screenLight: THREE.Object3D | null) {
+    const mesh = screenLight as THREE.Mesh | null;
+    const material = mesh?.material as THREE.MeshStandardMaterial | undefined;
+
+    if (material?.opacity && material.opacity > 0.9) {
+      pointLight.intensity = (material.emissiveIntensity || 0) * 20;
     } else {
       pointLight.intensity = 0;
     }
   }
-  const duration = 2;
-  const ease = "power2.inOut";
+
   function turnOnLights() {
     gsap.to(scene, {
       environmentIntensity: 0.64,
-      duration: duration,
-      ease: ease,
+      duration: 2,
+      ease: "power2.inOut",
     });
     gsap.to(directionalLight, {
       intensity: 1,
-      duration: duration,
-      ease: ease,
+      duration: 2,
+      ease: "power2.inOut",
     });
     gsap.to(".character-rim", {
       y: "55%",

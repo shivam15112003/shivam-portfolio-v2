@@ -26,9 +26,9 @@ export const handleTouchEnd = (
     interpolationY: number
   ) => void
 ) => {
-  setTimeout(() => {
+  window.setTimeout(() => {
     setMousePosition(0, 0, 0.03, 0.03);
-    setTimeout(() => {
+    window.setTimeout(() => {
       setMousePosition(0, 0, 0.1, 0.2);
     }, 1000);
   }, 2000);
@@ -42,7 +42,10 @@ export const handleHeadRotation = (
   interpolationY: number,
   lerp: (x: number, y: number, t: number) => number
 ) => {
-  if (!headBone) return;
+  if (!headBone) {
+    return;
+  }
+
   if (window.scrollY < 200) {
     const maxRotation = Math.PI / 6;
     headBone.rotation.y = lerp(
@@ -50,8 +53,8 @@ export const handleHeadRotation = (
       mouseX * maxRotation,
       interpolationY
     );
-    let minRotationX = -0.3;
-    let maxRotationX = 0.4;
+    const minRotationX = -0.3;
+    const maxRotationX = 0.4;
     if (mouseY > minRotationX) {
       if (mouseY < maxRotationX) {
         headBone.rotation.x = lerp(
@@ -73,10 +76,8 @@ export const handleHeadRotation = (
         interpolationX
       );
     }
-  } else {
-    if (window.innerWidth > 1024) {
-      headBone.rotation.x = lerp(headBone.rotation.x, -0.4, 0.03);
-      headBone.rotation.y = lerp(headBone.rotation.y, -0.3, 0.03);
-    }
+  } else if (window.innerWidth > 1024) {
+    headBone.rotation.x = lerp(headBone.rotation.x, -0.4, 0.03);
+    headBone.rotation.y = lerp(headBone.rotation.y, -0.3, 0.03);
   }
 };

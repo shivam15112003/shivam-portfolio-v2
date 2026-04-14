@@ -1,82 +1,32 @@
-import { useEffect } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import HoverLinks from "./HoverLinks";
-import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
-import "./styles/Navbar.css";
-
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+const navItems = [
+  { href: "#about", label: "About" },
+  { href: "#focus", label: "Education + Focus" },
+  { href: "#projects", label: "Projects" },
+  { href: "#publications", label: "Publications" },
+  { href: "#contact", label: "Contact" },
+];
 
 const Navbar = () => {
-  useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
-    smoother.scrollTop(0);
-    smoother.paused(true);
-
-    let links = document.querySelectorAll(".header ul a");
-    links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
-        }
-      });
-    });
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
-    });
-  }, []);
   return (
-    <>
-      <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          AM
+    <header className="site-nav">
+      <div className="site-nav__inner">
+        <a href="#top" className="site-brand" aria-label="Go to top">
+          <span className="site-brand__mark">SS</span>
+          <span className="site-brand__text">
+            <strong>Shivam Sharma</strong>
+            <span>AI + Robotics</span>
+          </span>
         </a>
-        <a
-          href="https://www.linkedin.com/in/akashrmalhotra/"
-          className="navbar-connect"
-          data-cursor="disable"
-          target="_blank"
-          rel="noreferrer"
-        >
-          linkedin.com/in/akashrmalhotra
-        </a>
-        <ul>
-          <li>
-            <a data-href="#about" href="#about">
-              <HoverLinks text="ABOUT" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#work" href="#work">
-              <HoverLinks text="WORK" />
-            </a>
-          </li>
-          <li>
-            <a data-href="#contact" href="#contact">
-              <HoverLinks text="CONTACT" />
-            </a>
-          </li>
-        </ul>
-      </div>
 
-      <div className="landing-circle1"></div>
-      <div className="landing-circle2"></div>
-      <div className="nav-fade"></div>
-    </>
+        <nav className="site-nav__links" aria-label="Primary">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
   );
 };
 

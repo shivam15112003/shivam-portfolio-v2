@@ -1,83 +1,57 @@
-import { MdArrowOutward, MdCopyright } from "react-icons/md";
-import "./styles/Contact.css";
+import { profile } from "../data/portfolio";
 
 const Contact = () => {
   return (
-    <div className="contact-section section-container" id="contact">
-      <div className="contact-container">
-        <h3>Contact</h3>
-        <div className="contact-flex">
-          <div className="contact-box">
-            <h4>Connect</h4>
+    <section className="page-section contact-section" id="contact">
+      <div className="section-frame contact-frame">
+        <div className="section-heading">
+          <p className="section-kicker">Contact</p>
+          <h2>Open to research, engineering, and robotics conversations.</h2>
+          <p>
+            The v1 contact flow is intentionally direct: email, LinkedIn, and
+            GitHub, with no external form dependency and no extra setup required.
+          </p>
+        </div>
+
+        <div className="contact-grid">
+          <article className="content-card contact-card">
+            <span className="card-label">Based in</span>
+            <h3>{profile.location}</h3>
             <p>
+              Current degree: {profile.degree} at {profile.school}.
+            </p>
+            <a
+              className="button button-secondary contact-resume"
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open Resume
+            </a>
+          </article>
+
+          <div className="contact-links">
+            {profile.socialLinks.map((link) => (
               <a
-                href="https://www.linkedin.com/in/akashrmalhotra/"
-                target="_blank"
-                rel="noreferrer"
-                data-cursor="disable"
+                key={link.label}
+                className="contact-link"
+                href={link.href}
+                target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={link.href.startsWith("mailto:") ? undefined : "noreferrer"}
               >
-                LinkedIn — akashrmalhotra
+                <span>{link.label}</span>
+                <strong>{link.note ?? link.href}</strong>
               </a>
-            </p>
-            <h4>Education</h4>
-            <p>
-              PGPWE (MBA), Indian Institute of Management, Lucknow — 2021–2023
-            </p>
-            <p>
-              B.Tech Computer Science, Manav Rachna Educational Institutions —
-              2009–2013
-            </p>
-          </div>
-          <div className="contact-box">
-            <h4>Social</h4>
-            <a
-              href="https://github.com/akashrmalhotra"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              GitHub <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/akashrmalhotra/"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              LinkedIn <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.youtube.com/@Leftbraincoder"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              YouTube <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com/leftbraincoder/"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
-            </a>
-          </div>
-          <div className="contact-box">
-            <h2>
-              Designed and Developed <br /> by <span>Akash Malhotra</span>
-            </h2>
-            <h5>
-              <MdCopyright /> 2026
-            </h5>
+            ))}
           </div>
         </div>
+
+        <footer className="site-footer">
+          <span>Shivam Sharma</span>
+          <span>{new Date().getFullYear()}</span>
+        </footer>
       </div>
-    </div>
+    </section>
   );
 };
 
