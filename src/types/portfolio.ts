@@ -40,6 +40,15 @@ export interface EducationEntry {
   detail: string;
 }
 
+export interface ExperienceEntry {
+  role: string;
+  company: string;
+  location: string;
+  timeline: string;
+  summary: string;
+  highlights: string[];
+}
+
 export interface HighlightCard {
   title: string;
   description: string;

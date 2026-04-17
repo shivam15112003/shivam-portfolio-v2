@@ -1,5 +1,6 @@
 import type {
   EducationEntry,
+  ExperienceEntry,
   FocusArea,
   HighlightCard,
   Profile,
@@ -38,7 +39,7 @@ export const profile: Profile = {
   school: "Arizona State University",
   shortBio:
     "I build systems that connect computer vision, robotics, and LLM-assisted workflows. My recent work spans agentic robot control, autonomous analytics pipelines, and AI-first automation projects that stay grounded in deployable engineering.",
-  resumeUrl: `${baseUrl}docs/Shivam_Sharma_Resume.pdf`,
+  resumeUrl: `${baseUrl}docs/ai_robotics_resume.pdf`,
   socialLinks,
 };
 
@@ -113,6 +114,35 @@ export const focusAreas: FocusArea[] = [
     title: "Automation systems",
     description:
       "End-to-end pipelines that generate documents, orchestrate workflows, and package outputs in recruiter-friendly or operator-friendly formats.",
+  },
+];
+
+export const experienceEntries: ExperienceEntry[] = [
+  {
+    role: "Machine Learning Engineer, Remote Mechanical Tree Operator",
+    company: "Arizona State University (Global Futures Laboratory)",
+    location: "Tempe, USA",
+    timeline: "February 2026 - Present",
+    summary:
+      "Research-facing systems work focused on remote mechanical operations, machine learning analysis, and LLM-assisted reporting.",
+    highlights: [
+      "Processed 100GB+ of operational datasets weekly and maintained over 98% data integrity for research workflows.",
+      "Built machine learning analysis for operational trends and anomaly detection with 95% precision.",
+      "Automated Python pipelines and LLM-based reporting to cut manual processing time by 30% and improve insight delivery speed by 25%.",
+    ],
+  },
+  {
+    role: "Machine Learning & AI Specialist",
+    company: "RSRTechno",
+    location: "Noida, India",
+    timeline: "April 2022 - June 2024",
+    summary:
+      "Production ML work spanning churn modeling, deployment-ready pipelines, and explainable dashboards for stakeholders.",
+    highlights: [
+      "Developed a churn prediction system for 500K+ customers and improved high-risk identification precision by 25%.",
+      "Engineered an end-to-end ML pipeline with Optuna-based hyperparameter tuning that streamlined deployment by 20%.",
+      "Implemented SHAP and Streamlit explainability dashboards that reduced stakeholder review time by 18%.",
+    ],
   },
 ];
 

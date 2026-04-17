@@ -459,6 +459,7 @@
 }
 
 .about-grid,
+.experience-grid,
 .projects-grid,
 .publication-grid,
 .contact-grid,
@@ -531,6 +532,37 @@
 .focus-card p {
   margin: 0.4rem 0 0;
   color: var(--muted);
+}
+
+.experience-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.experience-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.experience-card__company {
+  color: rgba(235, 244, 255, 0.92);
+  font-weight: 600;
+}
+
+.experience-highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.65rem;
 }
 
 .projects-grid {
@@ -697,6 +729,7 @@
   }
 
   .about-grid,
+  .experience-grid,
   .projects-grid,
   .publication-grid {
     grid-template-columns: 1fr;

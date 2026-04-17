@@ -1,6 +1,7 @@
 import About from "./About";
 import Contact from "./Contact";
 import EducationFocus from "./EducationFocus";
+import Experience from "./Experience";
 import Landing from "./Landing";
 import Navbar from "./Navbar";
 import Publications from "./Publications";
@@ -18,6 +19,7 @@ const MainContainer = () => {
         <Landing />
         <About />
         <EducationFocus />
+        <Experience />
         <Work />
         <Publications />
         <Contact />
