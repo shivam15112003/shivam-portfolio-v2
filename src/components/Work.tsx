@@ -8,8 +8,8 @@ const Work = () => {
           <p className="section-kicker">Selected Projects</p>
           <h2>Six projects that best show AI + robotics range.</h2>
           <p>
-            Each card keeps a fixed recruiter-friendly format: short summary,
-            focused tags, GitHub link, and a demo link when one already exists.
+            Each project highlights the system goal, technical scope, source
+            code, and demo material when available.
           </p>
         </div>
 

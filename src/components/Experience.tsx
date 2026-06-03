@@ -8,9 +8,8 @@ const Experience = () => {
           <p className="section-kicker">Work Experience</p>
           <h2>Applied AI work across research systems and production ML.</h2>
           <p>
-            The experience here is pulled from the current AI and robotics
-            resume so recruiters can scan recent impact without opening the PDF
-            first.
+            Roles focused on agentic AI systems, production ML pipelines, and
+            explainable analytics tools that turn complex data into action.
           </p>
         </div>
 

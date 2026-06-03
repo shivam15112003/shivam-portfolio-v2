@@ -73,12 +73,12 @@ export const aboutCards: HighlightCard[] = [
   {
     title: "Why it stands out",
     description:
-      "The strongest portfolio pieces are not generic ML demos. They show Dobot control, camera-driven reasoning, LLM-assisted planning, and recruiter-facing automation systems that solve real tasks end to end.",
+      "The strongest portfolio pieces are not generic ML demos. They show Dobot control, camera-driven reasoning, LLM-assisted planning, and automation systems that solve real tasks end to end.",
   },
   {
-    title: "How the site is framed",
+    title: "Technical direction",
     description:
-      "This version keeps the cinematic 3D energy from the reference portfolio, but strips away filler so recruiters get a fast read on education, focus areas, projects, publications, and direct contact paths.",
+      "Current work emphasizes deployable AI systems, reliable automation, clear reporting, and human-centered tools for robotics and operational decision-making.",
   },
 ];
 
@@ -113,7 +113,7 @@ export const focusAreas: FocusArea[] = [
   {
     title: "Automation systems",
     description:
-      "End-to-end pipelines that generate documents, orchestrate workflows, and package outputs in recruiter-friendly or operator-friendly formats.",
+      "End-to-end pipelines that generate documents, orchestrate workflows, and package outputs in clear, operator-ready formats.",
   },
 ];
 
@@ -143,6 +143,16 @@ export const experienceEntries: ExperienceEntry[] = [
     company: "RSRTechno",
     location: "Noida, India",
     timeline: "April 2022 - June 2024",
+    techStack: [
+      "Python",
+      "Machine Learning",
+      "XGBoost",
+      "SMOTE",
+      "Optuna",
+      "SHAP",
+      "Streamlit",
+      "SQL",
+    ],
     summary:
       "Production ML work spanning churn modeling, deployment-ready pipelines, and explainable dashboards for stakeholders.",
     highlights: [
@@ -211,7 +221,7 @@ export const featuredProjects: Project[] = [
   {
     title: "Autonomous Ops Analytics",
     summary:
-      "A recruiter-friendly autonomous analytics pipeline scaffold that ingests CSV data, performs profiling and modeling, and produces LaTeX plus PDF reporting with optional Gemini-assisted planning and narrative sections.",
+      "An autonomous analytics pipeline scaffold that ingests CSV data, performs profiling and modeling, and produces LaTeX plus PDF reporting with optional Gemini-assisted planning and narrative sections.",
     tags: ["Data", "Analytics", "ML", "Reporting"],
     githubUrl: "https://github.com/shivam15112003/autonomous-data-analytics",
     featured: true,

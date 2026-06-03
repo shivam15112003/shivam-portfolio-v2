@@ -8,9 +8,9 @@ const About = () => {
           <p className="section-kicker">About</p>
           <h2>AI, robotics, and practical systems thinking.</h2>
           <p>
-            The site keeps the visual punch of the 3D reference, but the story is
-            tuned for recruiters: what Shivam builds, where that work is headed,
-            and which projects best represent it.
+            I build applied AI systems that connect robotics, perception,
+            automation, and decision support with real-world engineering
+            constraints.
           </p>
         </div>
 
