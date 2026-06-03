@@ -8,8 +8,8 @@ const Publications = () => {
           <p className="section-kicker">Publications</p>
           <h2>Research work that already has a paper trail.</h2>
           <p>
-            The publication section stays compact in v1 and keeps the two current
-            paper links from the existing portfolio.
+            Selected published work in AI interaction, virtual hardware, and
+            gesture-driven intelligent systems.
           </p>
         </div>
 

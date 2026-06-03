@@ -8,8 +8,8 @@ const Work = () => {
           <p className="section-kicker">Selected Projects</p>
           <h2>Six projects that best show AI + robotics range.</h2>
           <p>
-            Each project highlights the system goal, technical scope, source
-            code, and demo material when available.
+            Selected systems are presented through goals, technical scope,
+            source code, and demos where available.
           </p>
         </div>
 

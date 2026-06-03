@@ -8,8 +8,8 @@ const Contact = () => {
           <p className="section-kicker">Contact</p>
           <h2>Open to research, engineering, and robotics conversations.</h2>
           <p>
-            The v1 contact flow is intentionally direct: email, LinkedIn, and
-            GitHub, with no external form dependency and no extra setup required.
+            Available for research collaboration, AI engineering roles, and
+            robotics-focused project discussions.
           </p>
         </div>
 
