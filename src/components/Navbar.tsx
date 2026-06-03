@@ -1,3 +1,6 @@
+import { type MouseEvent, useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
+
 const navItems = [
   { href: "#about", label: "About" },
   { href: "#focus", label: "Education + Focus" },
@@ -8,6 +11,43 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const closeDesktopMenu = () => {
+      if (window.innerWidth > 820) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", closeDesktopMenu);
+    return () => window.removeEventListener("resize", closeDesktopMenu);
+  }, []);
+
+  const handleNavItemClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    const target = document.getElementById(href.replace("#", ""));
+
+    if (!target) {
+      setIsMenuOpen(false);
+      return;
+    }
+
+    event.preventDefault();
+    const shouldDelayScroll = isMenuOpen && window.innerWidth <= 820;
+    setIsMenuOpen(false);
+
+    window.setTimeout(
+      () => {
+        window.history.pushState(null, "", href);
+        target.scrollIntoView({ block: "start" });
+      },
+      shouldDelayScroll ? 240 : 0
+    );
+  };
+
   return (
     <header className="site-nav">
       <div className="site-nav__inner">
@@ -19,9 +59,29 @@ const Navbar = () => {
           </span>
         </a>
 
-        <nav className="site-nav__links" aria-label="Primary">
+        <button
+          type="button"
+          className="site-nav__toggle"
+          aria-expanded={isMenuOpen}
+          aria-controls="primary-navigation"
+          aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          {isMenuOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
+        </button>
+
+        <nav
+          id="primary-navigation"
+          className="site-nav__links"
+          data-open={isMenuOpen}
+          aria-label="Primary"
+        >
           {navItems.map((item) => (
-            <a key={item.href} href={item.href}>
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={(event) => handleNavItemClick(event, item.href)}
+            >
               {item.label}
             </a>
           ))}

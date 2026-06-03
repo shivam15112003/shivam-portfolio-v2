@@ -52,6 +52,7 @@ const SoundToggle = () => {
       className="sound-toggle"
       data-active={isPlaying}
       aria-pressed={isPlaying}
+      aria-label={isPlaying ? "Pause ambient sound" : "Play ambient sound"}
       onClick={() => void handleToggle()}
     >
       <span className="sound-toggle__dot" aria-hidden="true"></span>

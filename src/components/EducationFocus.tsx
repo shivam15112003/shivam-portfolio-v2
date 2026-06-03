@@ -8,8 +8,8 @@ const EducationFocus = () => {
           <p className="section-kicker">Education + Focus</p>
           <h2>Graduate training plus a clear direction in AI and robotics.</h2>
           <p>
-            Instead of a generic career timeline, this section puts education,
-            current direction, and the core tools behind the work in one place.
+            Graduate robotics training, applied AI focus areas, and the core
+            tools behind current autonomy and automation work.
           </p>
         </div>
 

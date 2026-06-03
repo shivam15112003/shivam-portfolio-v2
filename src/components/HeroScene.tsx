@@ -22,10 +22,10 @@ const HeroFallback = () => {
     <div className="hero-scene-fallback">
       <img src={profileImageUrl} alt={profile.name} />
       <div className="hero-scene-fallback__content">
-        <strong>Static hero fallback</strong>
+        <strong>{profile.headline}</strong>
         <p>
-          The 3D model stays enabled for desktop browsers with motion allowed. On
-          smaller screens or unsupported devices, the site falls back cleanly.
+          Robotics, perception, agentic AI, and automation projects built for
+          practical engineering workflows.
         </p>
       </div>
     </div>
@@ -60,7 +60,7 @@ const HeroScene = () => {
   return (
     <aside className="hero-scene-panel" aria-label="3D hero">
       <span className="hero-scene-status">
-        {showScene ? "Interactive desktop mode" : "Static fallback"}
+        {showScene ? "Interactive AI + Robotics" : "AI + Robotics"}
       </span>
       <div className="hero-scene-body">
         {showScene ? (
