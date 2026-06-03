@@ -119,16 +119,23 @@ export const focusAreas: FocusArea[] = [
 
 export const experienceEntries: ExperienceEntry[] = [
   {
-    role: "Machine Learning Engineer, Remote Mechanical Tree Operator",
+    role: "AI Agent Engineer, Remote Mechanical Tree Operator",
     company: "Arizona State University (Global Futures Laboratory)",
     location: "Tempe, USA",
-    timeline: "February 2026 - Present",
-    summary:
-      "Research-facing systems work focused on remote mechanical operations, machine learning analysis, and LLM-assisted reporting.",
+    timeline: "February 2026–Present",
+    techStack: [
+      "Python",
+      "Multi-Agent AI Systems",
+      "Open-Source LLMs",
+      "GPT",
+      "Claude",
+      "Gemini",
+      "Agent Orchestration",
+    ],
     highlights: [
-      "Processed 100GB+ of operational datasets weekly and maintained over 98% data integrity for research workflows.",
-      "Built machine learning analysis for operational trends and anomaly detection with 95% precision.",
-      "Automated Python pipelines and LLM-based reporting to cut manual processing time by 30% and improve insight delivery speed by 25%.",
+      "Architected and deployed a multi-agent AI system powered by a customized open-source LLM to autonomously control and optimize remote mechanical tree operations.",
+      "Developed AI-agent-driven data pipelines to automate data collection, processing, and analysis from remote mechanical systems.",
+      "Leveraged GPT, Claude, and Gemini for anomaly detection, insight generation, and automated report generation for research teams.",
     ],
   },
   {

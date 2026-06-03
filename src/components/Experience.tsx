@@ -26,7 +26,12 @@ const Experience = () => {
               </div>
               <h3>{entry.role}</h3>
               <p className="experience-card__company">{entry.company}</p>
-              <p>{entry.summary}</p>
+              {entry.techStack?.length ? (
+                <p className="experience-card__stack">
+                  <span>Tech Stack:</span> {entry.techStack.join(", ")}
+                </p>
+              ) : null}
+              {entry.summary ? <p>{entry.summary}</p> : null}
               <ul className="experience-highlights">
                 {entry.highlights.map((highlight) => (
                   <li key={highlight}>{highlight}</li>

@@ -45,7 +45,8 @@ export interface ExperienceEntry {
   company: string;
   location: string;
   timeline: string;
-  summary: string;
+  summary?: string;
+  techStack?: string[];
   highlights: string[];
 }
 
